@@ -1,5 +1,5 @@
 //import 'package:co_worky/presentation/pages/auth_page.dart';
-import 'package:co_worky/presentation/pages/auth_page.dart';
+import 'package:co_worky/presentation/pages/extra_info_page.dart';
 import 'package:co_worky/route_generator.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
-      home: AuthPage(),
+      home: ExtraInfoPage(),
     );
   }
 }

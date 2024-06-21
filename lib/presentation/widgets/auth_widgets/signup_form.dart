@@ -7,7 +7,7 @@ class SignupForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
+      padding: EdgeInsets.symmetric(
         horizontal: 24,
         vertical: 16,
       ),
@@ -104,16 +104,31 @@ class SignupForm extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            FilledButton(
-              onPressed: () {},
-              style: FilledButton.styleFrom(
-                backgroundColor: Theme.of(context).primaryColor,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 12),
-                textStyle: Theme.of(context).textTheme.titleMedium,
-                elevation: 3,
+            // her signup as user or co-work
+            DropdownButtonFormField<String>(
+              items: ["co-worker", "user"].map((String value) {
+                return DropdownMenuItem(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                // Handle the selected item
+              },
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: Theme.of(context).colorScheme.onPrimary,
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
+                labelText: 'Sign up as',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    width: 2,
+                    color: Colors.black12.withOpacity(0.5),
+                  ),
+                  borderRadius: BorderRadius.circular(40),
+                ),
               ),
-              child: const Text('Get Started'),
             ),
             const SizedBox(
               height: 24,
